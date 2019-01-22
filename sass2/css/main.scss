@@ -1,0 +1,68 @@
+@import "_custom";
+
+h2{
+    color: aqua;
+
+}
+
+
+
+@for $i from 1 through 3 {
+    .grid-#{$i} { width: 10px * $i; }
+  }
+
+  $list: puma, sea-slug, egret, salamander;
+   
+  @each $animal in $list {
+    .#{$animal}-icon {
+      background-image: url('/images/#{$animal}.png');
+    }
+  }
+
+
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} { width: 2em * $i; }
+  $i: $i - 2;
+}
+
+
+$type: monster;
+p {
+  @if $type == ocean {
+    color: blue;
+  } @else if $type == matador {
+    color: red;
+  } @else if $type == monster {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+
+h6{
+    background-color: #000;
+    font-size: 30px;
+}
+
+#pera4{
+    font-style: italic;
+    @extend h6;
+}
+
+
+%d
+    {
+        background-color: #000;
+         font-size: 30px;
+    }
+.pro{
+    border: 2px;
+    @extend %d
+}
+
+.subpro{
+    @extend %d;
+}
+
